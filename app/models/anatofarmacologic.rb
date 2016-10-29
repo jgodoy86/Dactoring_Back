@@ -1,0 +1,2 @@
+class Anatofarmacologic < ApplicationRecord
+end

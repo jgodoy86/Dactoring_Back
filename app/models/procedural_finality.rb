@@ -1,0 +1,2 @@
+class ProceduralFinality < ApplicationRecord
+end

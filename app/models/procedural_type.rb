@@ -1,0 +1,2 @@
+class ProceduralType < ApplicationRecord
+end

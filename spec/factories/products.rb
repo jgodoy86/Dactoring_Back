@@ -1,0 +1,26 @@
+FactoryGirl.define do
+  factory :product do
+    code "MyString"
+    name "MyString"
+    group "MyString"
+    sub_group "MyString"
+    brand "MyString"
+    invima_reg "MyString"
+    cum_code "MyString"
+    anato_code "MyString"
+    active_princio "MyString"
+    form "MyString"
+    concentration "MyString"
+    pos "MyString"
+    unity_buy "MyString"
+    unity_buy_fraction "MyString"
+    content "MyString"
+    unity "MyString"
+    app_unity "MyString"
+    facturation_unity "MyString"
+    storage_condition "MyString"
+    reuse "MyString"
+    iva_percentage "MyString"
+    regulation "MyString"
+  end
+end

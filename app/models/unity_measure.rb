@@ -1,0 +1,2 @@
+class UnityMeasure < ApplicationRecord
+end

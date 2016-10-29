@@ -1,0 +1,2 @@
+class UnityType < ApplicationRecord
+end

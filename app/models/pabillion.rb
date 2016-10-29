@@ -1,0 +1,2 @@
+class Pabillion < ApplicationRecord
+end

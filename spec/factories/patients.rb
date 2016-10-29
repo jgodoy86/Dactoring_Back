@@ -1,0 +1,27 @@
+FactoryGirl.define do
+  factory :patient do
+    number_id "MyString"
+    document_type "MyString"
+    last_name1 "MyString"
+    last_name2 "MyString"
+    first_name1 "MyString"
+    first_name2 "MyString"
+    special_atention "MyString"
+    country "MyString"
+    department "MyString"
+    municipality "MyString"
+    neighborhood "MyString"
+    email "MyString"
+    address "MyString"
+    work_company "MyString"
+    marital_status "MyString"
+    education_level_state "MyString"
+    birthday "MyString"
+    education_level "MyString"
+    ocupation "MyString"
+    profession "MyString"
+    sex "MyString"
+    phone "MyString"
+    office_phone "MyString"
+  end
+end

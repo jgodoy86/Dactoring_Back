@@ -1,0 +1,2 @@
+class RipGroup < ApplicationRecord
+end
