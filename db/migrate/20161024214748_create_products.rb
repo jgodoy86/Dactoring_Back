@@ -1,6 +1,7 @@
 class CreateProducts < ActiveRecord::Migration[5.0]
   def change
     create_table :products do |t|
+      t.string :company_code
       t.string :code
       t.string :name
       t.string :group
@@ -9,9 +10,9 @@ class CreateProducts < ActiveRecord::Migration[5.0]
       t.string :invima_reg
       t.string :cum_code
       t.string :anato_code
-      t.string :active_princio
-      t.string :form
-      t.string :concentration
+      t.string :active_principle_code
+      t.string :form_code
+      t.string :concentration_code
       t.string :pos
       t.string :unity_buy
       t.string :unity_buy_fraction

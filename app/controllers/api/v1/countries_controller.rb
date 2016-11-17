@@ -27,7 +27,7 @@ class Api::V1::CountriesController < ApplicationController
   private
 
   def get_country
-    @country = Country.find_by(id: params[:country][:id])
+    @country = Country.find(params[:id])
   end
 
   def country_params

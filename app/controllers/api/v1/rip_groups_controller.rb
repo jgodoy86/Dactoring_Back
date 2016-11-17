@@ -27,7 +27,7 @@ class Api::V1::RipGroupsController < ApplicationController
   private
 
   def get_rip_group
-    @rip_group = RipGroup.find_by(id: params[:rip_group][:id])
+    @rip_group = RipGroup.find(params[:id])
   end
 
   def rip_group_params

@@ -27,10 +27,10 @@ class Api::V1::PabillionsController < ApplicationController
   private
 
   def get_pabillion
-    @pabillion = Pabillion.find_by(id: params[:pabillion][:id])
+    @pabillion = Pabillion.find(params[:id])
   end
-  
+
   def pabillion_params
-    params.require(:pabillion).permit(:company_code, :code, :name, :state )
+    params.require(:pabillion).permit(:company_code, :branch_office_code, :code, :name, :state )
   end
 end

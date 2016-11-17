@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Affiliation code:</strong>
+  <%= @affiliation_type_level.affiliation_code %>
+</p>
+
+<p>
+  <strong>Level:</strong>
+  <%= @affiliation_type_level.level %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @affiliation_type_level.description %>
+</p>
+
+<p>
+  <strong>Sgsss code:</strong>
+  <%= @affiliation_type_level.sgsss_code %>
+</p>
+
+<%= link_to 'Edit', edit_affiliation_type_level_path(@affiliation_type_level) %> |
+<%= link_to 'Back', affiliation_type_levels_path %>

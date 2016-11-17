@@ -27,7 +27,7 @@ class Api::V1::ProceduralTypesController < ApplicationController
   private
 
   def get_procedural_type
-    @procedural_type = ProceduralType.find_by(id: params[:procedural_type][:id])
+    @procedural_type = ProceduralType.find(params[:id])
   end
 
   def procedural_type_params

@@ -27,7 +27,7 @@ class Api::V1::FarmaceuticFormsController < ApplicationController
   private
 
   def get_farmaceutic_form
-    @farmaceutic_form = FarmaceuticForm.find_by(id: params[:farmaceutic_form][:id])
+    @farmaceutic_form = FarmaceuticForm.find(params[:id])
   end
 
   def farmaceutic_form_params

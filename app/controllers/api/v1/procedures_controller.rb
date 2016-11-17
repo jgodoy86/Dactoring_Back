@@ -27,10 +27,12 @@ class Api::V1::ProceduresController < ApplicationController
   private
 
   def get_procedure
-    @procedure = Procedure.find_by(id: params[:procedure][:id])
+    @procedure = Procedure.find(params[:id])
   end
 
   def procedure_params
-    params.require(:procedure).permit(:code, :description, :procedural_type, :service_end, :procedural_time, :sex, :begin_day, :end_day, :require_dx, :inform_consentment, :atention_level, :state)
+    params.require(:procedure).permit(:company_code, :code, :description, :procedural_type, :service_purpose,
+      :procedural_time, :sex, :begin_day, :end_day, :require_dx, :informed_consent,
+      :attention_level, :state)
   end
 end

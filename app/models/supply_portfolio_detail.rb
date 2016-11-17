@@ -1,0 +1,2 @@
+class SupplyPortfolioDetail < ApplicationRecord
+end

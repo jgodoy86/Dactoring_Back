@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Company code:</strong>
+  <%= @supply_portfolio.company_code %>
+</p>
+
+<p>
+  <strong>Code:</strong>
+  <%= @supply_portfolio.code %>
+</p>
+
+<p>
+  <strong>State:</strong>
+  <%= @supply_portfolio.state %>
+</p>
+
+<%= link_to 'Edit', edit_supply_portfolio_path(@supply_portfolio) %> |
+<%= link_to 'Back', supply_portfolios_path %>

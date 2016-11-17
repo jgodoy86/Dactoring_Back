@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161024214943) do
+ActiveRecord::Schema.define(version: 20161117185945) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,14 +24,32 @@ ActiveRecord::Schema.define(version: 20161024214943) do
     t.datetime "updated_at",      null: false
   end
 
+  create_table "affiliation_type_levels", force: :cascade do |t|
+    t.string   "affiliation_code"
+    t.string   "level"
+    t.text     "description"
+    t.string   "sgsss_code"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+  end
+
+  create_table "affiliation_types", force: :cascade do |t|
+    t.string   "code"
+    t.text     "description"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
   create_table "agenda_programs", force: :cascade do |t|
+    t.string   "company_code"
+    t.string   "master_company_code"
     t.string   "agenda_code"
     t.string   "medic_code"
     t.string   "specialty_code"
     t.string   "consultory_code"
-    t.string   "date_time_patient"
-    t.string   "date_time_appointment"
-    t.string   "date_time_system"
+    t.datetime "date_time_patient"
+    t.datetime "date_time_appointment"
+    t.datetime "date_time_system"
     t.string   "patient_id"
     t.string   "patient_type_id"
     t.string   "patient_affiliation_contract"
@@ -43,19 +61,21 @@ ActiveRecord::Schema.define(version: 20161024214943) do
   end
 
   create_table "agendas", force: :cascade do |t|
-    t.string   "agenda_code"
+    t.string   "company_code"
+    t.string   "master_company_code"
+    t.string   "code"
     t.string   "name"
     t.string   "day"
-    t.string   "start_hour"
-    t.string   "end_hour"
+    t.time     "start_hour"
+    t.time     "end_hour"
     t.string   "petition_time"
-    t.string   "max_patients"
+    t.integer  "max_patients"
     t.string   "medic_code"
     t.string   "specialty_code"
     t.string   "consultory_code"
     t.string   "agenda_state"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
   end
 
   create_table "anatofarmacologics", force: :cascade do |t|
@@ -80,15 +100,27 @@ ActiveRecord::Schema.define(version: 20161024214943) do
 
   create_table "atention_areas", force: :cascade do |t|
     t.string   "company_code"
+    t.string   "branch_office_code"
     t.string   "pabillion_code"
-    t.string   "area_code"
-    t.string   "area_name"
-    t.string   "atention_type"
-    t.string   "start_hour"
-    t.string   "end_hour"
+    t.string   "code"
+    t.string   "name"
+    t.string   "type"
+    t.time     "start_hour"
+    t.time     "end_hour"
     t.string   "state"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+  end
+
+  create_table "branch_offices", force: :cascade do |t|
+    t.string   "company_code"
+    t.string   "code"
+    t.string   "name"
+    t.string   "address"
+    t.string   "cellphone"
+    t.string   "phone"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
   end
 
   create_table "brands", force: :cascade do |t|
@@ -99,14 +131,13 @@ ActiveRecord::Schema.define(version: 20161024214943) do
   end
 
   create_table "companies", force: :cascade do |t|
-    t.string   "company_code"
+    t.string   "code"
     t.string   "nit"
     t.integer  "verification_digit"
     t.string   "social_reason"
     t.string   "commercial_name"
     t.string   "web_page"
-    t.string   "contributor_type"
-    t.string   "headquarters"
+    t.string   "contributor_types"
     t.string   "address"
     t.string   "cellphone"
     t.string   "phone"
@@ -122,25 +153,28 @@ ActiveRecord::Schema.define(version: 20161024214943) do
   end
 
   create_table "contacts", force: :cascade do |t|
+    t.string   "company_code"
+    t.string   "master_company_code"
     t.text     "message"
     t.string   "position"
     t.string   "phone"
     t.string   "cellphone"
     t.string   "email"
     t.string   "address"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
   end
 
   create_table "contracts", force: :cascade do |t|
+    t.string   "company_code"
     t.string   "code"
     t.string   "name"
     t.string   "company"
-    t.string   "start_date"
-    t.string   "end_date"
+    t.date     "start_date"
+    t.date     "end_date"
     t.string   "state"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
   end
 
   create_table "countries", force: :cascade do |t|
@@ -167,15 +201,33 @@ ActiveRecord::Schema.define(version: 20161024214943) do
   end
 
   create_table "group_products", force: :cascade do |t|
+    t.string   "company_code"
     t.string   "code"
     t.text     "description"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
+  create_table "master_companies", force: :cascade do |t|
+    t.string   "company_code"
+    t.string   "code"
+    t.string   "nit"
+    t.string   "verification_digit"
+    t.string   "social_reason"
+    t.string   "commercial_name"
+    t.string   "web_page"
+    t.string   "contributor_type"
+    t.string   "rips_code"
+    t.string   "address"
+    t.string   "cellphone"
+    t.string   "phone"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
   end
 
   create_table "medics", force: :cascade do |t|
-    t.string   "medic_code"
-    t.string   "medic_id"
+    t.string   "code"
+    t.string   "identification"
     t.string   "id_type"
     t.string   "first_name1"
     t.string   "first_name2"
@@ -213,11 +265,12 @@ ActiveRecord::Schema.define(version: 20161024214943) do
 
   create_table "pabillions", force: :cascade do |t|
     t.string   "company_code"
+    t.string   "branch_office_code"
     t.string   "code"
     t.string   "name"
     t.string   "state"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
   end
 
   create_table "patients", force: :cascade do |t|
@@ -263,24 +316,35 @@ ActiveRecord::Schema.define(version: 20161024214943) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "procedure_portfolios", force: :cascade do |t|
+    t.string   "company_code"
+    t.string   "code"
+    t.string   "procedure_code"
+    t.float    "procedure_cost"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+  end
+
   create_table "procedures", force: :cascade do |t|
+    t.string   "company_code"
     t.string   "code"
     t.string   "description"
     t.string   "procedural_type"
-    t.string   "service_end"
+    t.string   "service_purpose"
     t.string   "procedural_time"
     t.string   "sex"
     t.string   "begin_day"
     t.string   "end_day"
     t.string   "require_dx"
-    t.string   "inform_consentment"
-    t.string   "atention_level"
+    t.string   "informed_consent"
+    t.string   "attention_level"
     t.string   "state"
-    t.datetime "created_at",         null: false
-    t.datetime "updated_at",         null: false
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
   end
 
   create_table "products", force: :cascade do |t|
+    t.string   "company_code"
     t.string   "code"
     t.string   "name"
     t.string   "group"
@@ -289,9 +353,9 @@ ActiveRecord::Schema.define(version: 20161024214943) do
     t.string   "invima_reg"
     t.string   "cum_code"
     t.string   "anato_code"
-    t.string   "active_princio"
-    t.string   "form"
-    t.string   "concentration"
+    t.string   "active_principle_code"
+    t.string   "form_code"
+    t.string   "concentration_code"
     t.string   "pos"
     t.string   "unity_buy"
     t.string   "unity_buy_fraction"
@@ -303,8 +367,8 @@ ActiveRecord::Schema.define(version: 20161024214943) do
     t.string   "reuse"
     t.string   "iva_percentage"
     t.string   "regulation"
-    t.datetime "created_at",         null: false
-    t.datetime "updated_at",         null: false
+    t.datetime "created_at",            null: false
+    t.datetime "updated_at",            null: false
   end
 
   create_table "rip_groups", force: :cascade do |t|
@@ -330,11 +394,12 @@ ActiveRecord::Schema.define(version: 20161024214943) do
   end
 
   create_table "sub_group_products", force: :cascade do |t|
+    t.string   "company_code"
     t.string   "group_code"
     t.string   "code"
     t.string   "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
   end
 
   create_table "supplies", force: :cascade do |t|
@@ -348,6 +413,23 @@ ActiveRecord::Schema.define(version: 20161024214943) do
     t.string   "pos_code"
     t.datetime "created_at",            null: false
     t.datetime "updated_at",            null: false
+  end
+
+  create_table "supply_portfolio_details", force: :cascade do |t|
+    t.string   "company_code"
+    t.string   "supply_portfolio_code"
+    t.string   "supply_code"
+    t.float    "supply_cost"
+    t.datetime "created_at",            null: false
+    t.datetime "updated_at",            null: false
+  end
+
+  create_table "supply_portfolios", force: :cascade do |t|
+    t.string   "company_code"
+    t.string   "code"
+    t.string   "state"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
   end
 
   create_table "unity_measures", force: :cascade do |t|

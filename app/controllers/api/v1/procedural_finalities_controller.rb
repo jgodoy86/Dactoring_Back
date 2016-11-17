@@ -27,7 +27,7 @@ class Api::V1::ProceduralFinalitiesController < ApplicationController
   private
 
   def get_procedural_finality
-    @procedural_finality = ProceduralFinality.find_by(id: params[:procedural_finality][:id])
+    @procedural_finality = ProceduralFinality.find(params[:id])
   end
 
   def procedural_finality_params

@@ -1,0 +1,1 @@
+json.partial! "affiliation_type_levels/affiliation_type_level", affiliation_type_level: @affiliation_type_level

@@ -27,10 +27,11 @@ class Api::V1::SuppliesController < ApplicationController
   private
 
   def get_supply
-    @supply = Supply.find_by(id: params[:supply][:id])
+    @supply = Supply.find(params[:id])
   end
 
   def supply_params
-    params.require(:supply).permit(:anato_code ,:farmaceutic_form_code ,:active_principle_code ,:concentration_code ,:atc_code ,:rips_code ,:control_code ,:pos_code)
+    params.require(:supply).permit(:anato_code ,:farmaceutic_form_code ,:active_principle_code ,
+    :concentration_code ,:atc_code ,:rips_code ,:control_code ,:pos_code)
   end
 end

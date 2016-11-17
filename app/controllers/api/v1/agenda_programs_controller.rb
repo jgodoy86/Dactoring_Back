@@ -27,10 +27,14 @@ class Api::V1::AgendaProgramsController < ApplicationController
   private
 
   def get_agenda_program
-    @agenda_program = AgendaProgram.find_by(id: params[:agenda_program][:id])
+    @agenda_program = AgendaProgram.find(params[:id])
   end
 
   def agenda_program_params
-    params.require(:agenda_program).permit(:agenda_code ,:medic_code ,:specialty_code ,:consultory_code ,:date_time_patient ,:date_time_appointment ,:date_time_system ,:patient_id ,:patient_type_id ,:patient_affiliation_contract ,:agend_process ,:appointment_state ,:petition_time)
+    params.require(:agenda_program).permit(:company_code, :master_company_code,
+      :agenda_code ,:medic_code ,:specialty_code ,:consultory_code,
+      :date_time_patient ,:date_time_appointment ,:date_time_system ,:patient_id,
+      :patient_type_id ,:patient_affiliation_contract ,:agend_process ,
+      :appointment_state ,:petition_time)
   end
 end

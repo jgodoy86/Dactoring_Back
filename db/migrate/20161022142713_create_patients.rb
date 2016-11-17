@@ -1,8 +1,8 @@
 class CreatePatients < ActiveRecord::Migration[5.0]
   def change
     create_table :patients do |t|
-      t.string :number_id
-      t.string :document_type
+      t.string :identification
+      t.string :id_type
       t.string :last_name1
       t.string :last_name2
       t.string :first_name1
@@ -19,7 +19,7 @@ class CreatePatients < ActiveRecord::Migration[5.0]
       t.string :education_level_state
       t.string :birthday
       t.string :education_level
-      t.string :ocupation
+      t.string :occupation
       t.string :profession
       t.string :sex
       t.string :phone

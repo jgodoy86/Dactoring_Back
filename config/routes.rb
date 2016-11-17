@@ -1,6 +1,13 @@
 Rails.application.routes.draw do
 
 
+  resources :affiliation_type_levels
+  resources :affiliation_types
+  resources :procedure_portfolios
+  resources :supply_portfolio_details
+  resources :supply_portfolios
+  resources :master_companies
+  resources :branch_offices
   namespace :api, defaults: { format: 'json' } do
     api_version(module: 'v1', path: { value: 'v1' }) do
       

@@ -27,7 +27,7 @@ class Api::V1::BrandsController < ApplicationController
   private
 
   def get_brand
-    @brand = Brand.find_by(id: params[:brand][:id])
+    @brand = Brand.find(params[:id])
   end
 
   def brand_params

@@ -1,0 +1,1 @@
+json.partial! "master_companies/master_company", master_company: @master_company

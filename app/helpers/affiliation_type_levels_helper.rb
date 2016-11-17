@@ -1,0 +1,2 @@
+module AffiliationTypeLevelsHelper
+end

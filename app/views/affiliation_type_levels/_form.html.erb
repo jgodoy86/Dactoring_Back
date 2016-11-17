@@ -1,0 +1,37 @@
+<%= form_for(affiliation_type_level) do |f| %>
+  <% if affiliation_type_level.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(affiliation_type_level.errors.count, "error") %> prohibited this affiliation_type_level from being saved:</h2>
+
+      <ul>
+      <% affiliation_type_level.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :affiliation_code %>
+    <%= f.text_field :affiliation_code %>
+  </div>
+
+  <div class="field">
+    <%= f.label :level %>
+    <%= f.text_field :level %>
+  </div>
+
+  <div class="field">
+    <%= f.label :description %>
+    <%= f.text_area :description %>
+  </div>
+
+  <div class="field">
+    <%= f.label :sgsss_code %>
+    <%= f.text_field :sgsss_code %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

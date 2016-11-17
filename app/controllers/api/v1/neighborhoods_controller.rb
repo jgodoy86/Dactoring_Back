@@ -27,7 +27,7 @@ class Api::V1::NeighborhoodsController < ApplicationController
   private
 
   def get_neighborhood
-    @neighborhood = Neighborhood.find_by(id: params[:neighborhood][:id])
+    @neighborhood = Neighborhood.find(params[:id])
   end
 
   def neighborhood_params

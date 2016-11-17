@@ -1,0 +1,1 @@
+json.array! @affiliation_types, partial: 'affiliation_types/affiliation_type', as: :affiliation_type

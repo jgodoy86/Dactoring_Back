@@ -27,10 +27,12 @@ class Api::V1::CompaniesController < ApplicationController
   private
 
   def get_company
-    @company = Company.find_by(id: params[:company][:id])
+    @company = Company.find(params[:id])
   end
-  
+
   def company_params
-    params.require(:company).permit(:company_code, :nit, :verification_digit, :social_reason, :commercial_name, :web_page, :contributor_type, :headquarters, :address, :cellphone, :phone )
+    params.require(:company).permit(:code, :nit, :verification_digit,
+     :social_reason, :commercial_name, :web_page, :contributor_type, 
+     :address, :cellphone, :phone )
   end
 end

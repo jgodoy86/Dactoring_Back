@@ -27,10 +27,10 @@ class Api::V1::GroupProductsController < ApplicationController
   private
 
   def get_group_product
-    @group_product = GroupProduct.find_by(id: params[:group_product][:id])
+    @group_product = GroupProduct.find(params[:id])
   end
 
   def group_product_params
-    params.require(:group_product).permit(:code ,:description)
+    params.require(:group_product).permit(:company_code, :code ,:description)
   end
 end

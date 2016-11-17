@@ -27,10 +27,14 @@ class Api::V1::PatientsController < ApplicationController
   private
 
   def get_patient
-    @patient = Patient.find_by(id: params[:patient][:id])
+    @patient = Patient.find(params[:id])
   end
 
   def patient_params
-    params.require(:patient).permit(:number_id, :document_type, :last_name1, :last_name2, :first_name1, :first_name2, :special_atention, :country, :department, :municipality, :neighborhood, :email, :address, :work_company, :marital_status, :education_level_state, :birthday, :education_level, :ocupation, :profession, :sex, :phone, :office_phone)
+    params.require(:patient).permit(:identification, :id_type, :last_name1, :last_name2,
+     :first_name1, :first_name2, :special_atention, :country, :department,
+     :municipality, :neighborhood, :email, :address, :work_company, :marital_status,
+     :education_level_state, :birthday, :education_level, :occupation, :profession, 
+     :sex, :phone, :office_phone)
   end
 end

@@ -25,12 +25,13 @@ class Api::V1::AnatofarmacologicsController < ApplicationController
   end
 
   private
-  
+
   def get_anatofarmacologic
-    @anatofarmacologic = Anatofarmacologic.find_by(id: params[:anatofarmacologic][:id])
+    @anatofarmacologic = Anatofarmacologic.find(params[:id])
   end
 
   def anatofarmacologic_params
-    params.require(:anatofarmacologic).permit(:code, :code_lvl_1, :name_code_1, :code_lvl_2, :name_code_2, :code_lvl_3, :name_code_3)
+    params.require(:anatofarmacologic).permit(:code, :code_lvl_1, :name_code_1,
+      :code_lvl_2, :name_code_2, :code_lvl_3, :name_code_3)
   end
 end

@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Master Companies</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Company code</th>
+      <th>Code</th>
+      <th>Nit</th>
+      <th>Verification digit</th>
+      <th>Social reason</th>
+      <th>Commercial name</th>
+      <th>Web page</th>
+      <th>Contributor type</th>
+      <th>Rips code</th>
+      <th>Address</th>
+      <th>Cellphone</th>
+      <th>Phone</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @master_companies.each do |master_company| %>
+      <tr>
+        <td><%= master_company.company_code %></td>
+        <td><%= master_company.code %></td>
+        <td><%= master_company.nit %></td>
+        <td><%= master_company.verification_digit %></td>
+        <td><%= master_company.social_reason %></td>
+        <td><%= master_company.commercial_name %></td>
+        <td><%= master_company.web_page %></td>
+        <td><%= master_company.contributor_type %></td>
+        <td><%= master_company.rips_code %></td>
+        <td><%= master_company.address %></td>
+        <td><%= master_company.cellphone %></td>
+        <td><%= master_company.phone %></td>
+        <td><%= link_to 'Show', master_company %></td>
+        <td><%= link_to 'Edit', edit_master_company_path(master_company) %></td>
+        <td><%= link_to 'Destroy', master_company, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Master Company', new_master_company_path %>

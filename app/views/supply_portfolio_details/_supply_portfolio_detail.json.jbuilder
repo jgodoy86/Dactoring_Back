@@ -1,0 +1,2 @@
+json.extract! supply_portfolio_detail, :id, :company_code, :supply_portfolio_code, :supply_code, :supply_value, :created_at, :updated_at
+json.url supply_portfolio_detail_url(supply_portfolio_detail, format: :json)

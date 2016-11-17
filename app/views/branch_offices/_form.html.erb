@@ -1,0 +1,47 @@
+<%= form_for(branch_office) do |f| %>
+  <% if branch_office.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(branch_office.errors.count, "error") %> prohibited this branch_office from being saved:</h2>
+
+      <ul>
+      <% branch_office.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :company_code %>
+    <%= f.text_field :company_code %>
+  </div>
+
+  <div class="field">
+    <%= f.label :branch_office_code %>
+    <%= f.text_field :branch_office_code %>
+  </div>
+
+  <div class="field">
+    <%= f.label :branch_office_name %>
+    <%= f.text_field :branch_office_name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :address %>
+    <%= f.text_field :address %>
+  </div>
+
+  <div class="field">
+    <%= f.label :cellphone %>
+    <%= f.text_field :cellphone %>
+  </div>
+
+  <div class="field">
+    <%= f.label :phone %>
+    <%= f.text_field :phone %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

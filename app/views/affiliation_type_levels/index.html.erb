@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Affiliation Type Levels</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Affiliation code</th>
+      <th>Level</th>
+      <th>Description</th>
+      <th>Sgsss code</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @affiliation_type_levels.each do |affiliation_type_level| %>
+      <tr>
+        <td><%= affiliation_type_level.affiliation_code %></td>
+        <td><%= affiliation_type_level.level %></td>
+        <td><%= affiliation_type_level.description %></td>
+        <td><%= affiliation_type_level.sgsss_code %></td>
+        <td><%= link_to 'Show', affiliation_type_level %></td>
+        <td><%= link_to 'Edit', edit_affiliation_type_level_path(affiliation_type_level) %></td>
+        <td><%= link_to 'Destroy', affiliation_type_level, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Affiliation Type Level', new_affiliation_type_level_path %>

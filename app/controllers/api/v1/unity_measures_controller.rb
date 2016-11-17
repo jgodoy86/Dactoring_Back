@@ -27,7 +27,7 @@ class Api::V1::UnityMeasuresController < ApplicationController
   private
 
   def get_unity_measure
-    @unity_measure = UnityMeasure.find_by(id: params[:unity_measure][:id])
+    @unity_measure = UnityMeasure.find(params[:id])
   end
 
   def unity_measure_params

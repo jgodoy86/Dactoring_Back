@@ -27,10 +27,10 @@ class Api::V1::MunicipalitiesController < ApplicationController
   private
 
   def get_municipality
-    @municipality = Municipality.find_by(id: params[:municipality][:id])
+    @municipality = Municipality.find(params[:id])
   end
 
   def municipality_params
-    params.require(:municipality).permit( :country_code ,:department_code ,:municipality_code ,:code ,:name ,:zone )
+    params.require(:municipality).permit( :country_code ,:department_code ,:code ,:name)
   end
 end

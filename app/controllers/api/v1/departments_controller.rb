@@ -27,7 +27,7 @@ class Api::V1::DepartmentsController < ApplicationController
   private
 
   def get_department
-    @department = Department.find_by(id: params[:department][:id])
+    @department = Department.find(params[:id])
   end
 
   def department_params

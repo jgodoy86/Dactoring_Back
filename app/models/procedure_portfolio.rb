@@ -1,0 +1,2 @@
+class ProcedurePortfolio < ApplicationRecord
+end

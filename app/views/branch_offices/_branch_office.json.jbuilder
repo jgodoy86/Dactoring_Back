@@ -1,0 +1,2 @@
+json.extract! branch_office, :id, :company_code, :branch_office_code, :branch_office_name, :address, :cellphone, :phone, :created_at, :updated_at
+json.url branch_office_url(branch_office, format: :json)

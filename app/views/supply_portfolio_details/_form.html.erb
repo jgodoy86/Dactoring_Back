@@ -1,0 +1,37 @@
+<%= form_for(supply_portfolio_detail) do |f| %>
+  <% if supply_portfolio_detail.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(supply_portfolio_detail.errors.count, "error") %> prohibited this supply_portfolio_detail from being saved:</h2>
+
+      <ul>
+      <% supply_portfolio_detail.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :company_code %>
+    <%= f.text_field :company_code %>
+  </div>
+
+  <div class="field">
+    <%= f.label :supply_portfolio_code %>
+    <%= f.text_field :supply_portfolio_code %>
+  </div>
+
+  <div class="field">
+    <%= f.label :supply_code %>
+    <%= f.text_field :supply_code %>
+  </div>
+
+  <div class="field">
+    <%= f.label :supply_value %>
+    <%= f.text_field :supply_value %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

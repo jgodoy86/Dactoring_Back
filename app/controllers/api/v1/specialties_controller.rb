@@ -27,7 +27,7 @@ class Api::V1::SpecialtiesController < ApplicationController
   private
 
   def get_specialty
-    @specialty = Specialty.find_by(id: params[:specialty][:id])
+    @specialty = Specialty.find(params[:id])
   end
 
   def specialty_params

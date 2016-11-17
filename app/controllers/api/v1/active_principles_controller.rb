@@ -27,7 +27,7 @@ class Api::V1::ActivePrinciplesController < ApplicationController
   private
 
   def get_active_principle
-    @active_principle = ActivePrinciple.find_by(id: params[:active_principle][:id])
+    @active_principle = ActivePrinciple.find(params[:id])
   end
 
   def active_principle_params

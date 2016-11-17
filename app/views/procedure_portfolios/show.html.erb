@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Company code:</strong>
+  <%= @procedure_portfolio.company_code %>
+</p>
+
+<p>
+  <strong>Code:</strong>
+  <%= @procedure_portfolio.code %>
+</p>
+
+<p>
+  <strong>Procedure code:</strong>
+  <%= @procedure_portfolio.procedure_code %>
+</p>
+
+<p>
+  <strong>Procedure cost:</strong>
+  <%= @procedure_portfolio.procedure_cost %>
+</p>
+
+<%= link_to 'Edit', edit_procedure_portfolio_path(@procedure_portfolio) %> |
+<%= link_to 'Back', procedure_portfolios_path %>

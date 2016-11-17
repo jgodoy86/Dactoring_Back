@@ -27,10 +27,10 @@ class Api::V1::StoragesController < ApplicationController
   private
 
   def get_storage
-    @storage = Storage.find_by(id: params[:storage][:id])
+    @storage = Storage.find(params[:id])
   end
 
   def storage_params
-    params.require(:storage).permit(:code, :name , :state)
+    params.require(:storage).permit(:code, :name)
   end
 end

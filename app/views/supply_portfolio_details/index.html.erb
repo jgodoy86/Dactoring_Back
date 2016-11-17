@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Supply Portfolio Details</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Company code</th>
+      <th>Supply portfolio code</th>
+      <th>Supply code</th>
+      <th>Supply value</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @supply_portfolio_details.each do |supply_portfolio_detail| %>
+      <tr>
+        <td><%= supply_portfolio_detail.company_code %></td>
+        <td><%= supply_portfolio_detail.supply_portfolio_code %></td>
+        <td><%= supply_portfolio_detail.supply_code %></td>
+        <td><%= supply_portfolio_detail.supply_value %></td>
+        <td><%= link_to 'Show', supply_portfolio_detail %></td>
+        <td><%= link_to 'Edit', edit_supply_portfolio_detail_path(supply_portfolio_detail) %></td>
+        <td><%= link_to 'Destroy', supply_portfolio_detail, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Supply Portfolio Detail', new_supply_portfolio_detail_path %>

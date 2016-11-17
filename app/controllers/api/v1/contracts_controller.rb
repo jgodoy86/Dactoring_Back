@@ -27,10 +27,10 @@ class Api::V1::ContractsController < ApplicationController
   private
 
   def get_contract
-    @contract = Contract.find_by(id: params[:contract][:id])
+    @contract = Contract.find(params[:id])
   end
 
   def contract_params
-    params.require(:contract).permit(:code, :name, :company, :start_date, :end_date, :state)
+    params.require(:contract).permit(:company_code, :code, :name, :company, :start_date, :end_date, :state)
   end
 end

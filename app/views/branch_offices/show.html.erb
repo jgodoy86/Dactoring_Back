@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Company code:</strong>
+  <%= @branch_office.company_code %>
+</p>
+
+<p>
+  <strong>Branch office code:</strong>
+  <%= @branch_office.branch_office_code %>
+</p>
+
+<p>
+  <strong>Branch office name:</strong>
+  <%= @branch_office.branch_office_name %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @branch_office.address %>
+</p>
+
+<p>
+  <strong>Cellphone:</strong>
+  <%= @branch_office.cellphone %>
+</p>
+
+<p>
+  <strong>Phone:</strong>
+  <%= @branch_office.phone %>
+</p>
+
+<%= link_to 'Edit', edit_branch_office_path(@branch_office) %> |
+<%= link_to 'Back', branch_offices_path %>

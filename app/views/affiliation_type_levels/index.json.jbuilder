@@ -1,0 +1,1 @@
+json.array! @affiliation_type_levels, partial: 'affiliation_type_levels/affiliation_type_level', as: :affiliation_type_level

@@ -1,0 +1,77 @@
+<%= form_for(master_company) do |f| %>
+  <% if master_company.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(master_company.errors.count, "error") %> prohibited this master_company from being saved:</h2>
+
+      <ul>
+      <% master_company.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :company_code %>
+    <%= f.text_field :company_code %>
+  </div>
+
+  <div class="field">
+    <%= f.label :code %>
+    <%= f.text_field :code %>
+  </div>
+
+  <div class="field">
+    <%= f.label :nit %>
+    <%= f.text_field :nit %>
+  </div>
+
+  <div class="field">
+    <%= f.label :verification_digit %>
+    <%= f.text_field :verification_digit %>
+  </div>
+
+  <div class="field">
+    <%= f.label :social_reason %>
+    <%= f.text_field :social_reason %>
+  </div>
+
+  <div class="field">
+    <%= f.label :commercial_name %>
+    <%= f.text_field :commercial_name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :web_page %>
+    <%= f.text_field :web_page %>
+  </div>
+
+  <div class="field">
+    <%= f.label :contributor_type %>
+    <%= f.text_field :contributor_type %>
+  </div>
+
+  <div class="field">
+    <%= f.label :rips_code %>
+    <%= f.text_field :rips_code %>
+  </div>
+
+  <div class="field">
+    <%= f.label :address %>
+    <%= f.text_field :address %>
+  </div>
+
+  <div class="field">
+    <%= f.label :cellphone %>
+    <%= f.text_field :cellphone %>
+  </div>
+
+  <div class="field">
+    <%= f.label :phone %>
+    <%= f.text_field :phone %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

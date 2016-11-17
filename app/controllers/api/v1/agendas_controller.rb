@@ -27,10 +27,13 @@ class Api::V1::AgendasController < ApplicationController
   private
 
   def get_agenda
-    @agenda = Agenda.find_by(id: params[:agenda][:id])
+    @agenda = Agenda.find(params[:id])
   end
 
   def agenda_params
-    params.require(:agenda).permit(:agenda_code ,:name ,:day ,:start_hour ,:end_hour ,:petition_time ,:max_patients ,:medic_code ,:specialty_code ,:consultory_code ,:agenda_state )
+    params.require(:agenda).permit(:company_code, :master_company_code,
+      :code ,:name ,:day ,:start_hour ,
+      :end_hour ,:petition_time ,:max_patients ,:medic_code ,:specialty_code ,
+      :consultory_code ,:agenda_state )
   end
 end

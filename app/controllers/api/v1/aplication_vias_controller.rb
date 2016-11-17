@@ -27,7 +27,7 @@ class Api::V1::AplicationViasController < ApplicationController
   private
 
   def get_aplication_via
-    @aplication_via = AplicationVium.find_by(id: params[:aplication_via][:id])
+    @aplication_via = AplicationVium.find(params[:id])
   end
 
   def aplication_via_params

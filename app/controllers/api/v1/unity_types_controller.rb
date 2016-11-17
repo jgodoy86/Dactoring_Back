@@ -27,7 +27,7 @@ class Api::V1::UnityTypesController < ApplicationController
   private
 
   def get_unity_type
-    @unity_type = UnityType.find_by(id: params[:unity_type][:id])
+    @unity_type = UnityType.find(params[:id])
   end
 
   def unity_type_params

@@ -1,0 +1,37 @@
+<%= form_for(procedure_portfolio) do |f| %>
+  <% if procedure_portfolio.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(procedure_portfolio.errors.count, "error") %> prohibited this procedure_portfolio from being saved:</h2>
+
+      <ul>
+      <% procedure_portfolio.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :company_code %>
+    <%= f.text_field :company_code %>
+  </div>
+
+  <div class="field">
+    <%= f.label :code %>
+    <%= f.text_field :code %>
+  </div>
+
+  <div class="field">
+    <%= f.label :procedure_code %>
+    <%= f.text_field :procedure_code %>
+  </div>
+
+  <div class="field">
+    <%= f.label :procedure_cost %>
+    <%= f.text_field :procedure_cost %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

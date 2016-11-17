@@ -27,10 +27,12 @@ class Api::V1::MedicsController < ApplicationController
   private
 
   def get_medic
-    @medic = Medic.find_by(id: params[:medic][:id])
+    @medic = Medic.find(params[:id])
   end
 
   def medic_params
-    params.require(:medic).permit(:medic_code ,:medic_id ,:id_type ,:first_name1 ,:first_name2 ,:last_name1 ,:last_name2 ,:medical_record ,:phone ,:cellphone ,:email ,:agend_management ,:specialty_code)
+    params.require(:medic).permit(:code ,:identification ,:id_type ,:first_name1 ,:first_name2 ,
+    :last_name1 ,:last_name2 ,:medical_record ,:phone ,:cellphone ,:email ,
+    :agend_management ,:specialty_code)
   end
 end

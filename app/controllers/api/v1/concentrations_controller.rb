@@ -24,10 +24,10 @@ class Api::V1::ConcentrationsController < ApplicationController
     @concentration.destroy
   end
 
-  private 
+  private
 
   def get_concentration
-    @concentration = Concentration.find_by(id: params[:concentration][:id])
+    @concentration = Concentration.find(params[:id])
   end
 
   def concentration_params

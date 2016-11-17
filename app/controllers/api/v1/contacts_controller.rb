@@ -27,11 +27,12 @@ class Api::V1::ContactsController < ApplicationController
   private
 
   def get_contact
-    @contact = Contact.find_by(id: params[:contact][:id])
+    @contact = Contact.find(params[:id])
   end
-  
+
   def contact_params
-    params.require(:contact).permit(:message, :position, :phone, :cellphone, :email, :address)
+    params.require(:contact).permit(:company_code, :master_company_code, :message,
+     :position, :phone, :cellphone, :email, :address)
   end
 
 end
