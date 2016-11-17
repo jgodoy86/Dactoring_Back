@@ -1,13 +1,13 @@
 class Api::V1::AplicationViasController < ApplicationController
   before_action :get_aplication_via, except: [:index, :create]
-  
+
   def index
     @aplication_vias = AplicationVium.all
   end
 
   def create
     aplication_via = AplicationVium.new(aplication_via_params)
-    
+
     if aplication_via.save
       renderJson(:created, { notice: "aplication_viao creado exitosamente" })
     else
@@ -23,14 +23,14 @@ class Api::V1::AplicationViasController < ApplicationController
   def destroy
     @aplication_via.destroy
   end
-  
+
   private
-  
+
   def get_aplication_via
     @aplication_via = AplicationVium.find_by(id: params[:aplication_via][:id])
   end
-  
+
   def aplication_via_params
-    params.permit(:code, :description, :sex)
+    params.require(:aplication_via).permit(:code, :description, :sex)
   end
 end

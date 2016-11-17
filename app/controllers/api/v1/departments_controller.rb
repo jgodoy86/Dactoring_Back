@@ -1,13 +1,13 @@
 class Api::V1::DepartmentsController < ApplicationController
   before_action :get_department, except: [:index, :create]
-  
+
   def index
     @departments = Department.all
   end
 
   def create
     department = Department.new(department_params)
-    
+
     if department.save
       renderJson(:created, { notice: "Contacto creado exitosamente" })
     else
@@ -23,14 +23,14 @@ class Api::V1::DepartmentsController < ApplicationController
   def destroy
     @department.destroy
   end
-  
-  private 
-  
+
+  private
+
   def get_department
     @department = Department.find_by(id: params[:department][:id])
   end
-  
+
   def department_params
-    params.permit(:country_code, :code, :name )
+    params.require(:department).permit(:country_code, :code, :name )
   end
 end

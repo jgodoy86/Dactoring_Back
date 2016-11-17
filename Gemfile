@@ -5,6 +5,7 @@ gem 'rails', '~> 5.0.0', '>= 5.0.0.1'
 gem 'jbuilder', '~> 2.5'
 gem 'redis', '~> 3.0'
 gem 'turbolinks'
+gem 'pg'
 
 group :assets do
   gem 'jquery-rails'
@@ -20,7 +21,6 @@ group :test do
 end
 
 group :development, :test do
-  gem 'sqlite3'
   gem 'rspec-rails'
   gem 'factory_girl_rails'
   gem 'listen', '~> 3.0.5'
@@ -30,7 +30,6 @@ group :development, :test do
 end
 
 group :production do
-  gem 'pg'
   gem 'puma'
   gem 'rails_12factor'
 end

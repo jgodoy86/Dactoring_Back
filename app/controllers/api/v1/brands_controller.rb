@@ -1,13 +1,13 @@
 class Api::V1::BrandsController < ApplicationController
   before_action :get_brand, except: [:index, :create]
-  
+
   def index
     @brands = Brand.all
   end
 
   def create
     brand = Brand.new(brand_params)
-    
+
     if brand.save
       renderJson(:created, { notice: "Contacto creado exitosamente" })
     else
@@ -23,14 +23,14 @@ class Api::V1::BrandsController < ApplicationController
   def destroy
     @brand.destroy
   end
-  
-  private 
-  
+
+  private
+
   def get_brand
     @brand = Brand.find_by(id: params[:brand][:id])
   end
-  
+
   def brand_params
-    params.permit(:code, :name)
+    params.require(:brand).permit(:code, :name)
   end
 end

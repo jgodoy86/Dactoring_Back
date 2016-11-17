@@ -1,13 +1,13 @@
 class Api::V1::FarmaceuticFormsController < ApplicationController
   before_action :get_farmaceutic_form, except: [:index, :create]
-  
+
   def index
     @farmaceutic_forms = FarmaceuticForm.all
   end
 
   def create
     farmaceutic_form = FarmaceuticForm.new(farmaceutic_form_params)
-    
+
     if farmaceutic_form.save
       renderJson(:created, { notice: "farmaceutic_formo creado exitosamente" })
     else
@@ -23,15 +23,15 @@ class Api::V1::FarmaceuticFormsController < ApplicationController
   def destroy
     @farmaceutic_form.destroy
   end
-  
+
   private
-  
+
   def get_farmaceutic_form
     @farmaceutic_form = FarmaceuticForm.find_by(id: params[:farmaceutic_form][:id])
   end
-  
+
   def farmaceutic_form_params
-    params.permit(:code, :description, :aplication_code)
+    params.require(:farmaceutic_form).permit(:code, :description, :aplication_code)
   end
-  
+
 end

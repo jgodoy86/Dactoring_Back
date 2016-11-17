@@ -1,13 +1,13 @@
 class Api::V1::StoragesController < ApplicationController
   before_action :get_storage, except: [:index, :create]
-  
+
   def index
     @storages = Storage.all
   end
 
   def create
     storage = Storage.new(storage_params)
-    
+
     if storage.save
       renderJson(:created, { notice: "Contrato creado exitosamente" })
     else
@@ -23,14 +23,14 @@ class Api::V1::StoragesController < ApplicationController
   def destroy
     @storage.destroy
   end
-  
+
   private
-  
+
   def get_storage
     @storage = Storage.find_by(id: params[:storage][:id])
   end
-  
+
   def storage_params
-    params.permit(:code, :name , :state)
+    params.require(:storage).permit(:code, :name , :state)
   end
 end

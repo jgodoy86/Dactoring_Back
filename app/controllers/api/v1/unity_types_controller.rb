@@ -1,13 +1,13 @@
 class Api::V1::UnityTypesController < ApplicationController
   before_action :get_unity_type, except: [:index, :create]
-  
+
   def index
     @unity_types = UnityType.all
   end
 
   def create
     unity_type = UnityType.new(unity_type_params)
-    
+
     if unity_type.save
       renderJson(:created, { notice: "Contacto creado exitosamente" })
     else
@@ -23,14 +23,14 @@ class Api::V1::UnityTypesController < ApplicationController
   def destroy
     @unity_type.destroy
   end
-  
-  private 
-  
+
+  private
+
   def get_unity_type
     @unity_type = UnityType.find_by(id: params[:unity_type][:id])
   end
-  
+
   def unity_type_params
-    params.permit(:code , :name )
+    params.require(:unity_type).permit(:code , :name )
   end
 end

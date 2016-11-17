@@ -1,13 +1,13 @@
 class Api::V1::ConcentrationsController < ApplicationController
   before_action :get_concentration, except: [:index, :create]
-  
+
   def index
     @concentrations = Concentration.all
   end
 
   def create
     concentration = Concentration.new(concentration_params)
-    
+
     if concentration.save
       renderJson(:created, { notice: "Contacto creado exitosamente" })
     else
@@ -23,14 +23,14 @@ class Api::V1::ConcentrationsController < ApplicationController
   def destroy
     @concentration.destroy
   end
-  
+
   private 
-  
+
   def get_concentration
     @concentration = Concentration.find_by(id: params[:concentration][:id])
   end
-  
+
   def concentration_params
-    params.permit( :code , :description)
+    params.require(:concentration).permit( :code , :description)
   end
 end
