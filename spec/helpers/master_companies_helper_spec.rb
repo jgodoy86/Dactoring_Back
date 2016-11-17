@@ -10,6 +10,6 @@ require 'rails_helper'
 #     end
 #   end
 # end
-RSpec.describe MasterCompaniesHelper, type: :helper do
+RSpec.describe Api::V1::MasterCompaniesHelper, type: :helper do
   pending "add some examples to (or delete) #{__FILE__}"
 end

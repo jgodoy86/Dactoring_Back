@@ -1,2 +1,0 @@
-module SupplyPortfoliosHelper
-end

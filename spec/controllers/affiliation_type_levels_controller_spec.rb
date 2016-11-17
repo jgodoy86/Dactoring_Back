@@ -18,7 +18,7 @@ require 'rails_helper'
 # Message expectations are only used when there is no simpler way to specify
 # that an instance is receiving a specific message.
 
-RSpec.describe AffiliationTypeLevelsController, type: :controller do
+RSpec.describe Api::V1::AffiliationTypeLevelsController, type: :controller do
 
   # This should return the minimal set of attributes required to create a valid
   # AffiliationTypeLevel. As you add validations to AffiliationTypeLevel, be sure to
