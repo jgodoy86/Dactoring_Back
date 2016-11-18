@@ -1,9 +1,9 @@
 class CreateSupplyPortfolioDetails < ActiveRecord::Migration[5.0]
   def change
     create_table :supply_portfolio_details do |t|
-      t.string :company_code
-      t.string :supply_portfolio_code
-      t.string :supply_code
+      t.references :company, index: true
+      t.references :supply_portfolio, index: true
+      t.references :supply, index: true
       t.float  :supply_cost
 
       t.timestamps

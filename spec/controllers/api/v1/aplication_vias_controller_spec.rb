@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe Api::V1::AplicationViasController, type: :controller do
+RSpec.describe Api::V1::ApplicationViasController, type: :controller do
 
   describe "GET #index" do
     it "returns http success" do

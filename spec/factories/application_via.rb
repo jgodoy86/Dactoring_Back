@@ -1,5 +1,5 @@
 FactoryGirl.define do
-  factory :aplication_vium do
+  factory :application_vium do
     code "MyString"
     description "MyText"
     sex "MyString"

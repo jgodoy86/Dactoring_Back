@@ -7,7 +7,7 @@ class CreatePatients < ActiveRecord::Migration[5.0]
       t.string :last_name2
       t.string :first_name1
       t.string :first_name2
-      t.string :special_atention
+      t.string :special_attention
       t.string :country
       t.string :department
       t.string :municipality

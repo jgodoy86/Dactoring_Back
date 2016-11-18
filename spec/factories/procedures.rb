@@ -10,7 +10,7 @@ FactoryGirl.define do
     end_day "MyString"
     require_dx "MyString"
     inform_consentment "MyString"
-    atention_level "MyString"
+    attention_level "MyString"
     state "MyString"
   end
 end

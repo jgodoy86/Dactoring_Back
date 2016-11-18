@@ -1,2 +1,2 @@
-module Api::V1::AtentionAreasHelper
+module Api::V1::AttentionAreasHelper
 end

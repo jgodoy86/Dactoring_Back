@@ -1,2 +1,2 @@
-module Api::V1::AplicationViasHelper
+module Api::V1::ApplicationViasHelper
 end

@@ -1,10 +1,10 @@
 class CreateSupplies < ActiveRecord::Migration[5.0]
   def change
     create_table :supplies do |t|
-      t.string :anato_code
-      t.string :farmaceutic_form_code
-      t.string :active_principle_code
-      t.string :concentration_code
+      t.references :anatofarmacologic, index: true
+      t.references :farmaceutic_form, index: true
+      t.references :active_principle, index: true
+      t.references :concentration, index: true
       t.string :atc_code
       t.string :rips_code
       t.string :control_code

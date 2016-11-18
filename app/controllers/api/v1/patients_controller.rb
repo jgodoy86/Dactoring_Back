@@ -32,9 +32,9 @@ class Api::V1::PatientsController < ApplicationController
 
   def patient_params
     params.require(:patient).permit(:identification, :id_type, :last_name1, :last_name2,
-     :first_name1, :first_name2, :special_atention, :country, :department,
+     :first_name1, :first_name2, :special_attention, :country, :department,
      :municipality, :neighborhood, :email, :address, :work_company, :marital_status,
-     :education_level_state, :birthday, :education_level, :occupation, :profession, 
+     :education_level_state, :birthday, :education_level, :occupation, :profession,
      :sex, :phone, :office_phone)
   end
 end

@@ -6,7 +6,7 @@ FactoryGirl.define do
     last_name2 "MyString"
     first_name1 "MyString"
     first_name2 "MyString"
-    special_atention "MyString"
+    special_attention "MyString"
     country "MyString"
     department "MyString"
     municipality "MyString"

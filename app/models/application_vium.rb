@@ -1,0 +1,2 @@
+class ApplicationVium < ApplicationRecord
+end

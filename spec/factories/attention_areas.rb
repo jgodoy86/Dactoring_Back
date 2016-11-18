@@ -1,5 +1,5 @@
 FactoryGirl.define do
-  factory :atention_area do
+  factory :attention_area do
     company_code "MyString"
     pabillion_code "MyString"
     area_code "MyString"

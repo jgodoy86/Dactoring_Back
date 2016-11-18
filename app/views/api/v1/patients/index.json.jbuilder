@@ -5,7 +5,7 @@ json.(@patients) do |patient|
 	json.last_name2 patient.last_name2
 	json.first_name1 patient.first_name1
 	json.first_name2 patient.first_name2
-	json.special_atention patient.special_atention
+	json.special_attention patient.special_attention
 	json.country patient.country
 	json.department patient.department
 	json.municipality patient.municipality

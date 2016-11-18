@@ -1,10 +1,10 @@
 class CreateProcedures < ActiveRecord::Migration[5.0]
   def change
     create_table :procedures do |t|
-      t.string :company_code
-      t.string :code
+      t.references :company, index: true
+      # t.string :code
       t.string :description
-      t.string :procedural_type
+      t.string :procedural_type, index: true
       t.string :service_purpose
       t.string :procedural_time
       t.string :sex

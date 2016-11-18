@@ -31,7 +31,7 @@ class Api::V1::FarmaceuticFormsController < ApplicationController
   end
 
   def farmaceutic_form_params
-    params.require(:farmaceutic_form).permit(:code, :description, :aplication_code)
+    params.require(:farmaceutic_form).permit(:code, :description, :application_code)
   end
 
 end

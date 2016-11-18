@@ -1,2 +1,0 @@
-class AtentionArea < ApplicationRecord
-end

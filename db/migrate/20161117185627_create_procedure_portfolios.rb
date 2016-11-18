@@ -1,9 +1,9 @@
 class CreateProcedurePortfolios < ActiveRecord::Migration[5.0]
   def change
     create_table :procedure_portfolios do |t|
-      t.string :company_code
-      t.string :code
-      t.string :procedure_code
+      t.references :company, index: true
+      # t.string :code
+      t.references :procedure, index: true
       t.float :procedure_cost
 
       t.timestamps
